@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="flex gap-12 cursor-pointer">
-        <a href="https://github.com/shawilayoul">
+        <a href="https://github.com/AocholAyoul9">
           <i class="pi pi-github text-oranged desktop:text-[2rem] mobile:text-[1.5rem]"></i
         ></a>
         <a href="https://www.linkedin.com/in/aochol-ayoul-mojowok-654a7121a">

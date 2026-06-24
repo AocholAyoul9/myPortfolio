@@ -3,197 +3,85 @@
 import { ref } from 'vue'
 
 const props = defineProps(['toggleDarkMode', 'isDarkMode'])
-
 const showNavBar = ref(false)
 
 const toggleMenu = () => {
   showNavBar.value = !showNavBar.value
 }
 
-/**** langauage translator */
-
-
 const menus = [
-  {
-    title: 'Accueil',
-    link: '#home'
-  },
-  {
-    title: 'À propos',
-    link: '#about'
-  },
-
-  {
-    title: 'Compétences',
-    link: '#skill'
-  },
-  {
-    title: 'Èducation',
-    link: '#education'
-  },
-  {
-    title: 'Projets',
-    link: '#projects'
-  },
-  {
-    title: 'Contact',
-    link: '#contact'
-  }
+  { title: 'Accueil', link: '#home' },
+  { title: 'À propos', link: '#about' },
+  { title: 'Compétences', link: '#skill' },
+  { title: 'Parcours', link: '#education' },
+  { title: 'Projets', link: '#projects' },
+  { title: 'Contact', link: '#contact' }
 ]
 </script>
 
 <template>
   <header
-    class="fixed flex h-[70px] justify-evenly items-center w-[100vw] desktop:w-[100%] bg-white z-10 dark:text-black"
+    class="fixed top-0 z-50 w-full border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-surface-dark-muted/80"
   >
-    <nav
-      class="relative flex h-[70px] w-[100vw] items-center justify-evenly gap-28 desktop:w-[95%] bg-white z-10"
-    >
-      <a href="#home"
-        ><div
-          class="logo font-bold desktop:text-[25px] hover:text-oranged text-blue desktop:mr-20 mobile:mr-72 mobile:text-[20px]"
-        >
-          <h2><span class="text-oranged">A</span>ochol</h2>
-        </div></a
-      >
-      <button
-        @click="props.toggleDarkMode"
-        :class="[props.isDarkMode ? 'pi pi-sun' : 'pi pi-moon']"
-        class="absolute text-[22px] font-bold desktop:hidden "
-      ></button>
-    
-      <div class="desktop:flex gap-6 mobile:hidden">
-        <ul v-for="menu in menus" :key="menu" class="flex">
-          <a :href="menu.link">
-            <li class="list flex font-bold text-lg hover:text-oranged">
-              {{ menu.title }}
-            </li>
-          </a>
-        </ul>
-      </div>
-      <button
-        @click="props.toggleDarkMode"
-        :class="[props.isDarkMode ? 'pi pi-sun' : 'pi pi-moon']"
-        class="text-[22px] font-bold  mobile:hidden tablate:hidden desktop:block"
-      ></button>
-      <div
-        v-if="showNavBar"
-        class="mobile:flex absolute flex-col gap-5 py-2 px-4 mt-[350px] w-full bg-gray desktop:hidden"
-      >
-        <ul v-for="menu in menus" :key="menu">
-          <a :href="menu.link">
-            <li class="flex font-bold text-lg hover:text-oranged" @click="toggleMenu">
-              {{ menu.title }}
-            </li>
-          </a>
-        </ul>
-      </div>
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 desktop:px-8">
+      <a href="#home" class="group flex items-center gap-1">
+        <span class="text-xl font-bold tracking-tight text-ink dark:text-white">
+          <span class="text-blue">A</span>ochol
+        </span>
+      </a>
 
-      <div>
-        <i
+      <ul class="hidden items-center gap-1 desktop:flex">
+        <li v-for="menu in menus" :key="menu.link">
+          <a
+            :href="menu.link"
+            class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+          >
+            {{ menu.title }}
+          </a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button
+          @click="props.toggleDarkMode"
+          :aria-label="props.isDarkMode ? 'Mode clair' : 'Mode sombre'"
+          class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+        >
+          <i :class="props.isDarkMode ? 'pi pi-sun' : 'pi pi-moon'"></i>
+        </button>
+
+        <a href="#contact" class="btn-primary hidden text-sm desktop:inline-flex">
+          Me contacter
+        </a>
+
+        <button
           @click="toggleMenu"
-          class="bar cursor-pointer desktop:hidden absolute"
-          :class="[
-            showNavBar
-              ? 'pi pi-times mr-5 text-[30px] cursor-pointer '
-              : 'pi pi-bars mr-5 text-[30px] cursor-pointer '
-          ]"
-        ></i>
+          class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-ink dark:border-slate-700 desktop:hidden"
+          :aria-label="showNavBar ? 'Fermer le menu' : 'Ouvrir le menu'"
+        >
+          <i :class="showNavBar ? 'pi pi-times' : 'pi pi-bars'"></i>
+        </button>
       </div>
     </nav>
+
+    <div
+      v-if="showNavBar"
+      class="border-t border-slate-200 bg-white px-5 py-4 dark:border-slate-800 dark:bg-surface-dark-muted desktop:hidden"
+    >
+      <ul class="flex flex-col gap-1">
+        <li v-for="menu in menus" :key="menu.link">
+          <a
+            :href="menu.link"
+            @click="toggleMenu"
+            class="block rounded-lg px-3 py-2.5 text-sm font-medium text-ink-muted hover:bg-slate-100 hover:text-ink dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+          >
+            {{ menu.title }}
+          </a>
+        </li>
+        <li class="pt-2">
+          <a href="#contact" @click="toggleMenu" class="btn-primary w-full">Me contacter</a>
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
-
-<style scoped>
-header {
-  box-shadow: 0px 15px 10px -15px gray;
-}
-.list {
-  display: block;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  padding: 10px 10px;
-}
-.list:after,
-.list:before {
-  content: '';
-  position: absolute;
-  display: block;
-  border: 0px solid transparent;
-}
-
-.list:after {
-  width: 0%;
-  height: 80%;
-  border-top: 2px solid blue;
-  border-bottom: 2px solid orangered;
-  transition: all 0.3s ease;
-}
-
-.list:before {
-  width: 120%;
-  height: 0%;
-  border-left: 2px solid blue;
-  border-right: 2px solid orangered;
-  transition: all 0.5s ease;
-}
-
-.list:hover::before {
-  height: 80%;
-}
-
-.list:hover::after {
-  width: 120%;
-}
-/**logo style */
-.logo {
-  display: block;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  padding: 10px 10px;
-}
-.logo:after,
-.logo:before {
-  content: '';
-  position: absolute;
-  display: block;
-  border: 0px solid transparent;
-}
-
-.logo:after {
-  width: 0%;
-  height: 80%;
-  border-top: 2px solid blue;
-  border-bottom: 2px solid orangered;
-  transition: all 0.3s ease;
-}
-
-.logo:before {
-  width: 120%;
-  height: 0%;
-  border-left: 2px solid blue;
-  border-right: 2px solid orangered;
-  transition: all 0.5s ease;
-}
-
-.logo:hover::before {
-  height: 80%;
-}
-
-.logo:hover::after {
-  width: 120%;
-}
-.bar {
-  top: 25%;
-  position: absolute;
-  right: 1%;
-}
-</style>

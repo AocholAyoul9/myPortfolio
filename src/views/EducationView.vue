@@ -1,134 +1,88 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts" setup>
 import { useDataStore } from '@/stores/data'
+
 const store = useDataStore()
 </script>
+
 <template>
-  <main class="w-[80%] m-auto desktop:h-[100vh] flex items-center justify-center flex-col gap-5 z-1 desktop:mb-[200px] mobile:mb-[60px]">
-    <div class="top" data-aos="fade-up" data-aos-duration="2500">
-      <h2 class="font-bold desktop:text-[25px] mobile:text-[20px]">Éducation et Expériences
-      </h2>
+  <main class="section-wrap">
+    <div class="mb-12 text-center desktop:text-left" data-aos="fade-up" data-aos-duration="800">
+      <p class="section-label">Parcours</p>
+      <h2 class="section-title">Expérience & Formation</h2>
+      <p class="section-desc mx-auto desktop:mx-0">
+        Missions professionnelles, freelance et parcours de formation.
+      </p>
     </div>
-    <div class="timeline">
-      <div
-        class="timeline-item"
-        v-for="(education, index) in store.education"
-        :key="education.id"
-        :class="{ 'left': index % 2 === 0, 'right': index % 2 !== 0 }"
-        data-aos="fade-up"
-        data-aos-duration="2500"
-      >
-        <div class="timeline-content">
-          <h4 class="font-bold">{{ education.title }}</h4>
-          <p class="text-sm text-gray-400">{{ education.duration }}</p>
-          <p>{{ education.description }}</p>
+
+    <!-- Professional experience -->
+    <section class="mb-16">
+      <h3 class="mb-8 text-lg font-semibold text-ink dark:text-white">Expérience professionnelle</h3>
+      <div class="relative mx-auto max-w-4xl">
+        <div class="absolute left-4 top-0 h-full w-px bg-slate-200 dark:bg-slate-700 desktop:left-1/2 desktop:-ml-px"></div>
+
+        <div
+          v-for="(item, index) in store.experience"
+          :key="item.id"
+          class="relative mb-8 flex last:mb-0"
+          :class="index % 2 === 0 ? 'desktop:justify-end desktop:pr-[calc(50%+2rem)]' : 'desktop:justify-start desktop:pl-[calc(50%+2rem)]'"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <div
+            class="absolute left-4 top-6 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-blue bg-white dark:bg-surface-dark desktop:left-1/2"
+          ></div>
+
+          <div class="card ml-10 w-full desktop:ml-0 desktop:max-w-md">
+            <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-blue">
+              {{ item.duration }}
+            </p>
+            <h4 class="mb-1 font-semibold text-ink dark:text-white">{{ item.title }}</h4>
+            <p class="mb-3 text-sm font-medium text-ink-muted dark:text-slate-300">{{ item.company }}</p>
+            <div v-if="item.stack" class="mb-3 flex flex-wrap gap-2">
+              <span v-for="tech in item.stack" :key="tech" class="tag">{{ tech }}</span>
+            </div>
+            <p class="text-sm leading-relaxed text-ink-muted dark:text-slate-400">
+              {{ item.description }}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Education & training -->
+    <section>
+      <h3 class="mb-8 text-lg font-semibold text-ink dark:text-white">Formation</h3>
+      <div class="relative mx-auto max-w-4xl">
+        <div class="absolute left-4 top-0 h-full w-px bg-slate-200 dark:bg-slate-700 desktop:left-1/2 desktop:-ml-px"></div>
+
+        <div
+          v-for="(item, index) in store.education"
+          :key="item.id"
+          class="relative mb-8 flex last:mb-0"
+          :class="index % 2 === 0 ? 'desktop:justify-end desktop:pr-[calc(50%+2rem)]' : 'desktop:justify-start desktop:pl-[calc(50%+2rem)]'"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <div
+            class="absolute left-4 top-6 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-slate-400 bg-white dark:border-slate-500 dark:bg-surface-dark desktop:left-1/2"
+          ></div>
+
+          <div class="card ml-10 w-full desktop:ml-0 desktop:max-w-md">
+            <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-blue">
+              {{ item.duration }}
+            </p>
+            <h4 class="mb-1 font-semibold text-ink dark:text-white">{{ item.title }}</h4>
+            <p class="mb-3 text-sm font-medium text-ink-muted dark:text-slate-300">{{ item.company }}</p>
+            <div v-if="item.stack" class="mb-3 flex flex-wrap gap-2">
+              <span v-for="tech in item.stack" :key="tech" class="tag">{{ tech }}</span>
+            </div>
+            <p class="text-sm leading-relaxed text-ink-muted dark:text-slate-400">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
-<style scoped>
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: blue;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-  border-radius: 3px;
-}
-
-.timeline-item {
-  padding: 10px 40px;
-  position: relative;
-  width: 50%;
-}
-
-.timeline-item.left {
-  left: 0;
-}
-
-.timeline-item.right {
-  left: 50%;
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -13px;
-  background-color: white;
-  border: 4px solid blue;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.timeline-item.right::after {
-  left: -12px;
-}
-
-.timeline-content {
-  padding: 20px 30px;
-  background-color: white;
-  border-radius: 6px;
-  position: relative;
-  border: 1px solid blue;
-  color:black;
-  animation: float 4s ease-in-out infinite;
-}
-
-.timeline-content:hover {
-  background: white;
-  cursor: pointer;
-  transition: all 2s ease-in-out;
-  color: black;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .timeline::after {
-    left: 31px;
-  }
-
-  .timeline-item {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-  .timeline-item.left,
-  .timeline-item.right {
-    left: 0;
-  }
-
-  .timeline-item::after {
-    left: 15px;
-  }
-
-  .timeline-item.right::after {
-    left: 15px;
-  }
-}
-</style>

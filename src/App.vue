@@ -10,7 +10,6 @@ import EducationView from './views/EducationView.vue'
 import ProjectsView from './views/ProjectsView.vue'
 import ContactView from './views/ContactView.vue'
 
-/** Implementing dark mode */
 const isDarkMode = ref(false)
 
 onMounted(() => {
@@ -21,7 +20,6 @@ onMounted(() => {
   }
 })
 
-/*** Toggling dark mode */
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value
   if (isDarkMode.value) {
@@ -36,42 +34,17 @@ const toggleDarkMode = () => {
 
 <template>
   <div :class="{ dark: isDarkMode }">
-    <div
-      class="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300"
-    >
-      <header>
-        <nav>
-          <Header :toggleDarkMode="toggleDarkMode" :isDarkMode="isDarkMode" />
-        </nav>
-      </header>
-      <!-- Navigation to different sections using anchor links -->
-      <div id="home">
-        <HomeView />
-      </div>
-      <div id="about">
-        <AboutView />
-      </div>
+    <div class="min-h-screen bg-surface-muted text-ink transition-colors duration-300 dark:bg-surface-dark-muted dark:text-slate-100">
+      <Header :toggleDarkMode="toggleDarkMode" :isDarkMode="isDarkMode" />
 
-      <div id="skill">
-        <SkillsView />
-      </div>
+      <div id="home"><HomeView /></div>
+      <div id="about"><AboutView /></div>
+      <div id="skill"><SkillsView /></div>
+      <div id="education"><EducationView /></div>
+      <div id="projects"><ProjectsView /></div>
+      <div id="contact"><ContactView /></div>
 
-      <div id="education">
-        <EducationView />
-      </div>
-
-      <div id="projects">
-        <ProjectsView />
-      </div>
-
-      <div id="contact">
-        <ContactView />
-      </div>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   </div>
 </template>
-
-<style scoped></style>

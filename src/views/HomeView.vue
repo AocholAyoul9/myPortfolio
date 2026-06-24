@@ -1,100 +1,54 @@
 <script setup></script>
+
 <template>
-  <main class="w-[100%] flex justify-between transition delay-3000 duration-3000" id="home">
-    <div class="left ml-[10%] flex flex-col items-start justify-center gap-12">
-      <div class="section" data-aos="fade-up" data-aos-duration="2500">
-        <h3 class="desktop:text-lg mobile:text-sm">Salut!</h3>
+  <main class="section-wrap min-h-screen flex items-center pt-16" id="home">
+    <div class="grid w-full items-center gap-12 desktop:grid-cols-2 desktop:gap-16">
+      <div class="flex flex-col gap-8" data-aos="fade-up" data-aos-duration="800">
+        <div class="inline-flex w-fit items-center gap-2 rounded-full border border-blue/20 bg-blue/5 px-4 py-1.5 text-sm font-medium text-blue dark:border-blue/30 dark:bg-blue/10">
+          <span class="h-2 w-2 rounded-full bg-green"></span>
+          Disponible pour de nouveaux projets
+        </div>
 
-        <h1 class="desktop:text-[40px] font-bold my-2 mobile:text-[20px]">Je suis Aochol Ayoul</h1>
+        <div>
+          <p class="section-label mb-2">Développeur Full-Stack Freelance</p>
+          <h1 class="text-3xl font-bold leading-tight tracking-tight text-ink dark:text-white desktop:text-5xl">
+            Je suis Aochol Ayoul
+          </h1>
+          <p class="mt-4 text-lg leading-relaxed text-ink-muted dark:text-slate-400 desktop:text-xl">
+            Sites vitrine, e-commerce et applications web à Lyon — vous travaillez
+            directement avec moi, sans intermédiaire.
+          </p>
+        </div>
 
-        <p class="desktop:text-[35px] mobile:text-[18px]">
-          Étudiant Concepteur Développeur d'Applications
-           @ M2i Formation, Lyon 🚀 En recherche de
-          stage non rémunéré (janv-juin 2026) 
-        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#projects" class="btn-primary">Voir mes projets</a>
+          <a href="https://shawiltech.fr/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            ShawilTech.fr
+          </a>
+        </div>
+
+        <div class="flex gap-3">
+          <a href="https://github.com/shawilayoul" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="pi pi-github text-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/aochol-ayoul-mojowok-654a7121a" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="pi pi-linkedin text-lg"></i>
+          </a>
+        </div>
       </div>
-      <div class="flex gap-12 cursor-pointer">
-        <a href="https://github.com/AocholAyoul9">
-          <i class="pi pi-github text-oranged desktop:text-[2rem] mobile:text-[1.5rem]"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/aochol-ayoul-mojowok-654a7121a">
-          <i class="pi pi-linkedin text-blue desktop:text-[2rem] mobile:text-[1.5rem]"></i
-        ></a>
-        <i class="pi pi-instagram text-oranged desktop:text-[2rem] mobile:text-[1.5rem]"></i>
-        <i class="pi pi-twitter text-blue desktop:text-[2rem] mobile:text-[1.5rem]"></i>
-      </div>
-      <a href="#projects">
-        <button class="hombtn text-white p-2 px-5 rounded-lg cursor-pointer">
-          Voir mon travail
-        </button></a
-      >
-    </div>
-    <div
-      class="right flex items-center justify-center mobile:h-[70vh] desktop:h-[95vh] w-[40%] rounded-tl-[300%] rounded-bl-[100%]"
-    >
-      <div class="imgContainer">
-        <img src="../assets/images/aocholProfile.png" alt="" class="img" />
+
+      <div class="flex justify-center desktop:justify-end" data-aos="fade-left" data-aos-duration="800">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-full bg-gradient-to-br from-blue/20 to-slate-200/50 blur-2xl dark:from-blue/10 dark:to-slate-700/30"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-2 shadow-card dark:border-slate-700 dark:bg-surface-dark">
+            <img
+              src="../assets/images/aocholProfile.png"
+              alt="Aochol Ayoul — Développeur Full-Stack"
+              class="h-72 w-72 rounded-xl object-cover desktop:h-96 desktop:w-96"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </template>
-<style scoped>
-.right {
-  background-size: 100% 100%;
-  background-position:
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px;
-  background-image: repeating-linear-gradient(315deg, #00ffff2e 92%, #073aff00 100%),
-    repeating-radial-gradient(75% 75% at 238% 218%, #00ffff12 30%, #073aff14 39%),
-    radial-gradient(99% 99% at 109% 2%, #00c9ffff 0%, #073aff00 100%),
-    radial-gradient(99% 99% at 21% 78%, #7b00ffff 0%, #073aff00 100%),
-    radial-gradient(160% 154% at 711px -303px, #2000ffff 0%, #073affff 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.img {
-  animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-.hombtn {
-  background-size: 100% 100%;
-  background-position:
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px;
-  background-image: repeating-linear-gradient(315deg, #00ffff2e 92%, #073aff00 100%),
-    repeating-radial-gradient(75% 75% at 238% 218%, #00ffff12 30%, #073aff14 39%),
-    radial-gradient(99% 99% at 109% 2%, #00c9ffff 0%, #073aff00 100%),
-    radial-gradient(99% 99% at 21% 78%, #7b00ffff 0%, #073aff00 100%),
-    radial-gradient(160% 154% at 711px -303px, #2000ffff 0%, #073affff 100%);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: white;
-}
-.pi:hover {
-  transform: scale(1.5);
-  transition: all 0.5s ease-in-out;
-}
-.hombtn:hover {
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, red);
-  animation: slidebg 2s linear infinite;
-}
-
-@keyframes slidebg {
-  to {
-    background-position: 20vw;
-  }
-}
-</style>

@@ -1,18 +1,65 @@
-/* ./src/index.css */
 @import 'primeicons/primeicons.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
+@layer base {
+  html {
     scroll-behavior: smooth;
-}
-body{
-box-sizing: border-box;
-background: #ffffff;
-font-family: Avenir, Helvetica, Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-color: #2c3e50;
+    scroll-padding-top: 5rem;
+  }
 
+  body {
+    @apply bg-surface-muted text-ink antialiased font-sans;
+  }
+
+  .dark body {
+    @apply bg-surface-dark-muted text-slate-100;
+  }
+}
+
+@layer components {
+  .section-wrap {
+    @apply w-[90%] max-w-6xl mx-auto py-16 desktop:py-24;
+  }
+
+  .section-label {
+    @apply text-sm font-semibold uppercase tracking-widest text-blue mb-3;
+  }
+
+  .section-title {
+    @apply text-2xl desktop:text-3xl font-bold text-ink dark:text-white mb-2;
+  }
+
+  .section-desc {
+    @apply text-ink-muted dark:text-slate-400 text-base desktop:text-lg max-w-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue/90 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue/40 focus:ring-offset-2 dark:focus:ring-offset-slate-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-ink transition-all duration-200 hover:border-blue/30 hover:bg-slate-50 dark:border-slate-700 dark:bg-surface-dark dark:text-slate-100 dark:hover:border-blue/40 dark:hover:bg-slate-800;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200/80 bg-white p-6 shadow-card transition-shadow duration-200 dark:border-slate-700/80 dark:bg-surface-dark;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover;
+  }
+
+  .social-link {
+    @apply flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink-muted transition-all duration-200 hover:border-blue/30 hover:text-blue hover:shadow-sm dark:border-slate-700 dark:bg-surface-dark dark:text-slate-400 dark:hover:border-blue/40 dark:hover:text-blue;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-light outline-none transition-colors focus:border-blue focus:ring-2 focus:ring-blue/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  .tag {
+    @apply rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-ink-muted dark:bg-slate-800 dark:text-slate-300;
+  }
 }

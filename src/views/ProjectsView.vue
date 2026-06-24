@@ -1,361 +1,234 @@
 <script setup></script>
 
 <template>
-  <main>
-    <div
-      class="projectContainer desktop:w-[80%] moblie:w-[80%] m-auto flex flex-col justify-center gap-10 mobile:mb-10"
-    >
-      <div data-aos="fade-up" data-aos-duration="2500">
-        <h2 class="font-bold desktop:text-[25px] text-center mobile:text-[20px]">Mes projets</h2>
-      </div>
-      <div
-        class="imgCon desktop:grid desktop:grid-cols-3 gap-10 mobile:grid mobile:grid-cols-1 moblie:w-[100%] m-auto flex"
-      >
-        <!-- Project 2 -->
-        <div
-          class="container desktop:max-w-[400px] mobile:max-w-[320px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="2500"
-        >
-          <div
-            class="top flex text-white font-bold justify-between items-center mt-3 cursor-pointer"
-          >
-            <a href="https://github.com/shawilayoul/sleekStyles" class="hover:text-oranged"
-              >Github Code</a
-            >
-            <a href="https://sleekstyle.onrender.com" class="hover:text-oranged">E-commerce</a>
-          </div>
-          <div class="laptop">
-            <div class="laptop__screen">
-              <video width="100%" height="100%" controls>
-                <source src="../assets/videos/projects2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="laptop__bottom">
-              <div class="laptop__under"></div>
-            </div>
-            <div class="laptop__shadow"></div>
-          </div>
-          <div class="bottom flex items-center justify-evenly text-white p-2">
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ReactJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ExpressJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              MongoDb
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Tailwind CSS
-            </button>
-          </div>
-        </div>
-        <!-- Project 1 -->
-        <div
-          class="container desktop:max-w-[400px] mobile:max-w-[320px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="2500"
-        >
-          <div
-            class="top flex text-white font-bold justify-between items-center mt-3 cursor-pointer"
-          >
-            <a href="https://github.com/shawilayoul/silvercake" class="hover:text-oranged"
-              >Github Code</a
-            >
-            <a href="https://sleekstyle.onrender.com/" class="hover:text-oranged"
-              >E-commerce Dashboard</a
-            >
-          </div>
-          <div class="laptop">
-            <div class="laptop__screen">
-              <video width="100%" height="100%" controls>
-                <source src="../assets/videos/projects1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="laptop__bottom">
-              <div class="laptop__under"></div>
-            </div>
-            <div class="laptop__shadow"></div>
-          </div>
-          <div class="bottom flex items-center justify-evenly text-white p-2">
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ReactJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Express.Js
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Tailwind Css
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              MongoDb
-            </button>
-          </div>
-        </div>
+  <main class="section-wrap">
+    <div class="mb-12 text-center" data-aos="fade-up" data-aos-duration="800">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Mes projets</h2>
+      <p class="section-desc mx-auto">
+        Une sélection de réalisations web, mobile et e-commerce.
+      </p>
+    </div>
 
-        <!-- Project 3 -->
-        <div
-          class="container desktop:max-w-[400px] mobile:max-w-[320px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="2500"
-        >
-          <div
-            class="top flex text-white font-bold justify-between items-center mt-3 cursor-pointer"
-          >
-            <a href="https://github.com/shawilayoul/VibePlay-Music-App" class="hover:text-oranged"
-              >Githup Code</a
-            >
-            <a
-              href="https://play.google.com/store/apps/details?id=com.fjuchristianvibes"
-              class="hover:text-oranged"
-              >App in Google play</a
-            >
+    <div class="grid gap-8 mobile:grid-cols-1 desktop:grid-cols-2 tablate:grid-cols-2">
+      <!-- Project 1 -->
+      <article class="card flex flex-col gap-4" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-links">
+          <a href="https://github.com/shawilayoul/sleekStyles" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://sleekstyle.onrender.com" target="_blank" rel="noopener noreferrer">Live demo</a>
+        </div>
+        <div class="laptop">
+          <div class="laptop__screen">
+            <video width="100%" height="100%" controls>
+              <source src="../assets/videos/projects2.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="laptop">
-            <div class="laptop__screen">
-              <video width="100%" height="100%" controls>
-                <source src="../assets/videos/projects3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="laptop__bottom">
-              <div class="laptop__under"></div>
-            </div>
-            <div class="laptop__shadow"></div>
-          </div>
-          <div class="bottom flex items-center justify-evenly text-white p-2">
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              React Native
-            </button>
+          <div class="laptop__bottom"><div class="laptop__under"></div></div>
+          <div class="laptop__shadow"></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </article>
 
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              FireBase
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Tailwind CSS
-            </button>
-          </div>
+      <!-- Project 2 -->
+      <article class="card flex flex-col gap-4" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-links">
+          <a href="https://github.com/shawilayoul/silvercake" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://sleekstyle.onrender.com/" target="_blank" rel="noopener noreferrer">Dashboard</a>
         </div>
-        <!-- Project 4 -->
-        <div
-          class="container desktop:max-w-[400px] mobile:max-w-[320px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="2500"
-        >
-          <div
-            class="top flex text-white font-bold justify-between items-center mt-3 cursor-pointer"
-          >
-            <a href="#" class="hover:text-oranged">Github Code</a>
-            <a href="https://musicappdashboard.onrender.com" class="hover:text-oranged"
-              >Music App Dashboard</a
-            >
+        <div class="laptop">
+          <div class="laptop__screen">
+            <video width="100%" height="100%" controls>
+              <source src="../assets/videos/projects1.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="laptop">
-            <div class="laptop__screen">
-              <video width="100%" height="100%" controls>
-                <source src="../assets/videos/project4.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="laptop__bottom">
-              <div class="laptop__under"></div>
-            </div>
-            <div class="laptop__shadow"></div>
-          </div>
-          <div class="bottom flex items-center justify-evenly text-white p-2">
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ReactJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Tailwind CSS
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              NestJs
-            </button>
+          <div class="laptop__bottom"><div class="laptop__under"></div></div>
+          <div class="laptop__shadow"></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </article>
 
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              FireBase
-            </button>
-          </div>
+      <!-- Project 3 -->
+      <article class="card flex flex-col gap-4" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-links">
+          <a href="https://github.com/shawilayoul/VibePlay-Music-App" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://play.google.com/store/apps/details?id=com.fjuchristianvibes" target="_blank" rel="noopener noreferrer">Play Store</a>
         </div>
-        <!-- Project 5 -->
-        <div
-          class="container desktop:max-w-[400px] mobile:max-w-[320px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-          data-aos-duration="2500"
-        >
-          <div
-            class="top flex text-white font-bold justify-between items-center mt-3 cursor-pointer"
-          >
-            <a href="https://github.com/shawilayoul/CakeArts" class="hover:text-oranged"
-              >Github Code</a
-            >
-            <a href="https://cakeart.vercel.app/" class="hover:text-oranged">CakeArts Website</a>
+        <div class="laptop">
+          <div class="laptop__screen">
+            <video width="100%" height="100%" controls>
+              <source src="../assets/videos/projects3.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="laptop">
-            <div class="laptop__screen">
-              <video width="100%" height="100%" controls>
-                <source src="../assets/videos/project5.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="laptop__bottom">
-              <div class="laptop__under"></div>
-            </div>
-            <div class="laptop__shadow"></div>
-          </div>
-          <div class="bottom flex items-center justify-evenly text-white p-2">
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ReactJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              Sass css
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              ExpressJs
-            </button>
-            <button class="hover:text-oranged desktop:text-[15px] mobile:text-[13px]">
-              MongoDb
-            </button>
-          </div>
+          <div class="laptop__bottom"><div class="laptop__under"></div></div>
+          <div class="laptop__shadow"></div>
         </div>
-      </div>
+        <div class="project-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card flex flex-col gap-4" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-links">
+          <a href="#" class="opacity-50 pointer-events-none">Code</a>
+          <a href="https://musicappdashboard.onrender.com" target="_blank" rel="noopener noreferrer">Dashboard</a>
+        </div>
+        <div class="laptop">
+          <div class="laptop__screen">
+            <video width="100%" height="100%" controls>
+              <source src="../assets/videos/project4.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="laptop__bottom"><div class="laptop__under"></div></div>
+          <div class="laptop__shadow"></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">NestJS</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="card flex flex-col gap-4 desktop:col-span-2 desktop:max-w-md desktop:mx-auto" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-links">
+          <a href="https://github.com/shawilayoul/CakeArts" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://cakeart.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
+        </div>
+        <div class="laptop">
+          <div class="laptop__screen">
+            <video width="100%" height="100%" controls>
+              <source src="../assets/videos/project5.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="laptop__bottom"><div class="laptop__under"></div></div>
+          <div class="laptop__shadow"></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Sass</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+        </div>
+      </article>
     </div>
   </main>
 </template>
 
 <style scoped>
-.container {
-  background-size: 100% 100%;
-  background-position:
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px,
-    0px 0px;
-  background-image: repeating-linear-gradient(315deg, #00ffff2e 92%, #073aff00 100%),
-    repeating-radial-gradient(75% 75% at 238% 218%, #00ffff12 30%, #073aff14 39%),
-    radial-gradient(99% 99% at 109% 2%, #00c9ffff 0%, #073aff00 100%),
-    radial-gradient(99% 99% at 21% 78%, #7b00ffff 0%, #073aff00 100%),
-    radial-gradient(160% 154% at 711px -303px, #2000ffff 0%, #073affff 100%);
-  height: 400px;
-  border-radius: 8px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
+.project-links {
+  @apply flex justify-between text-sm font-semibold;
 }
-.container:hover {
-  cursor: pointer;
+
+.project-links a {
+  @apply text-blue transition-colors hover:text-blue/80;
 }
+
+.project-tags {
+  @apply flex flex-wrap gap-2;
+}
+
 .laptop {
   position: relative;
-  margin: auto;
+  margin: 0 auto;
   max-width: 20rem;
-  .laptop__screen {
-    position: relative;
-    z-index: 1;
-    padding: 3%;
-    border-radius: 0.5rem;
-    background: #ecf1f7;
-    background-image: linear-gradient(to bottom, #333, #111);
-    box-shadow: 0 0.1rem 0 #cfcfcf;
-    border: 2px solid #ccc;
-    height: 250px;
-    video {
-      display: block;
-      max-width: 100%;
-      height: 100%;
-      aspect-ratio: attr(width) / attr(height);
-      background: #000;
-    }
-  }
+}
 
-  .laptop__bottom {
-    position: relative;
-    z-index: 1;
-    margin-right: -7%;
-    margin-left: -7%;
-    height: 0.7rem;
-    background: #e9eff5;
-    background-image: linear-gradient(
-      to right,
-      #d2dde9 0%,
-      #f9fcff 15%,
-      #e5ebf2 40%,
-      #e5ebf2 60%,
-      #f9fcff 85%,
-      #d2dde9 100%
-    );
+.laptop__screen {
+  position: relative;
+  z-index: 1;
+  padding: 3%;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to bottom, #334155, #1e293b);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+  border: 1px solid #475569;
+  height: 220px;
+}
 
-    &::before {
-      display: block;
-      margin: 0 auto;
-      width: 20%;
-      height: 0.7rem;
-      border-radius: 0 0 0.2rem 0.2rem;
-      background: #f6f9fc;
-      background-image: linear-gradient(
-        to right,
-        #c3cfdb 0%,
-        #f6f9fc 10%,
-        #f6f9fc 90%,
-        #c3cfdb 100%
-      );
-      content: ' ';
-    }
-  }
+.laptop__screen video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  background: #000;
+}
 
-  .laptop__under {
-    position: absolute;
-    top: 100%;
-    left: 25%;
-    display: block;
-    width: 50%;
-    height: 1.5rem;
-    background: #e2e8f0;
-    background-image: linear-gradient(to bottom, #e2e8f0, #bec7d1);
+.laptop__bottom {
+  position: relative;
+  z-index: 1;
+  margin: 0 -7%;
+  height: 0.6rem;
+  background: #e2e8f0;
+  background-image: linear-gradient(
+    to right,
+    #cbd5e1 0%,
+    #f8fafc 15%,
+    #e2e8f0 40%,
+    #e2e8f0 60%,
+    #f8fafc 85%,
+    #cbd5e1 100%
+  );
+}
 
-    &::after,
-    &::before {
-      position: absolute;
-      top: 0%;
-      right: 100%;
-      bottom: 0;
-      display: block;
-      width: 50%;
-      border-bottom-left-radius: 100%;
-      background: inherit;
-      content: ' ';
-    }
+.laptop__bottom::before {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  height: 0.6rem;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background: #f1f5f9;
+  content: ' ';
+}
 
-    &::after {
-      right: auto;
-      left: 100%;
-      border-bottom-right-radius: 100%;
-      border-bottom-left-radius: 0;
-    }
-  }
+.laptop__under {
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  width: 50%;
+  height: 1.2rem;
+  background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+}
 
-  .laptop__shadow {
-    position: absolute;
-    right: -10%;
-    bottom: -2.5rem;
-    left: -10%;
-    z-index: 0;
-    height: 2rem;
-    background: radial-gradient(ellipse closest-side, #000, transparent);
-    opacity: 0.5;
-  }
+.laptop__under::after,
+.laptop__under::before {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  width: 50%;
+  border-bottom-left-radius: 100%;
+  background: inherit;
+  content: ' ';
+}
+
+.laptop__under::after {
+  right: auto;
+  left: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 0;
+}
+
+.laptop__shadow {
+  position: absolute;
+  right: -10%;
+  bottom: -2rem;
+  left: -10%;
+  z-index: 0;
+  height: 1.5rem;
+  background: radial-gradient(ellipse closest-side, rgba(15, 23, 42, 0.15), transparent);
 }
 </style>

@@ -6,116 +6,80 @@ export default {
   setup() {
     const frontEndSkills = ref([
       { name: 'HTML', percentage: 95 },
-      { name: 'CSS (Sass, Tailwind, Style Component)', percentage: 90 },
+      { name: 'CSS (Sass, Tailwind)', percentage: 90 },
       { name: 'JavaScript / TypeScript', percentage: 85 },
-      { name: 'ReactJs / React Native', percentage: 80 },
+      { name: 'React / React Native', percentage: 80 },
       { name: 'Angular', percentage: 60 },
       { name: 'WordPress', percentage: 70 }
     ])
 
     const backEndSkills = ref([
-      { name: 'NodeJs', percentage: 80 },
-      { name: 'ExpressJs', percentage: 80 },
-      { name: 'NestJs', percentage: 70 },
-      { name: 'Java (spring Boot)', percentage: 60 },
+      { name: 'Node.js', percentage: 80 },
+      { name: 'Express.js', percentage: 80 },
+      { name: 'NestJS', percentage: 70 },
+      { name: 'Java (Spring Boot)', percentage: 60 },
       { name: 'MongoDB', percentage: 80 },
-      { name: 'MySQL,SQL', percentage: 75 },
-      
+      { name: 'MySQL / SQL', percentage: 75 }
     ])
 
-    // Animate progress bars on mount
     onMounted(() => {
-      const animateProgressBars = () => {
-        frontEndSkills.value.forEach((skill, index) => {
-          const progressBar = document.querySelector(`[ref="progressBar${index}"]`)
-          if (progressBar) {
-            progressBar.style.width = '0%'
-            setTimeout(() => {
-              progressBar.style.width = `${skill.percentage}%`
-            }, 100)
-          }
-        })
-
-        backEndSkills.value.forEach((skill, index) => {
-          const progressBar = document.querySelector(
-            `[ref="progressBar${index + frontEndSkills.value.length}"]`
-          )
-          if (progressBar) {
-            progressBar.style.width = '0%'
-            setTimeout(() => {
-              progressBar.style.width = `${skill.percentage}%`
-            }, 100)
-          }
-        })
-      }
-
-      animateProgressBars()
+      const bars = document.querySelectorAll('[data-skill-bar]')
+      bars.forEach((bar, index) => {
+        const width = bar.getAttribute('data-width')
+        bar.style.width = '0%'
+        setTimeout(() => {
+          bar.style.width = `${width}%`
+        }, 100 + index * 50)
+      })
     })
 
-    return {
-      frontEndSkills,
-      backEndSkills
-    }
+    return { frontEndSkills, backEndSkills }
   }
 }
 </script>
 
 <template>
-  <main
-    class="w-[80%] m-auto desktop:h-[100vh] flex flex-col items-center justify-center gap-6 mt-2 transition delay-3000 duration-3000 mb-10 mobile:mb-28"
-  >
-    <div class="top flex flex-col items-center" data-aos="fade-up" data-aos-duration="2500">
-      <h2 class="font-bold desktop:text-[25px] mobile:text-[20px]">Compétences</h2>
-      <p class="text-[20px] mobile:text-[16px]">Mes compétences techniques</p>
+  <main class="section-wrap">
+    <div class="mb-12 text-center desktop:text-left" data-aos="fade-up" data-aos-duration="800">
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Compétences</h2>
+      <p class="section-desc mx-auto desktop:mx-0">
+        Technologies que j'utilise au quotidien pour livrer des projets performants.
+      </p>
     </div>
-    <div class="bottom w-[100%] desktop:flex justify-between gap-12 items-center">
-      <!-- Front-end Skills -->
-      <div class="left desktop:w-[50%]">
-        <h3 class="font-bold mb-4 text-[20px]" data-aos="fade-up" data-aos-duration="2500">
-          Front-end
-        </h3>
-        <div
-          v-for="(skill, index) in frontEndSkills"
-          :key="index"
-          class="skills mb-5"
-          data-aos="fade-up"
-          :data-aos-delay="index * 100"
-        >
-          <div class="flex justify-between desktop:mb-2 mobile:mb-1">
-            <p>{{ skill.name }}</p>
-            <p>{{ skill.percentage }}%</p>
+
+    <div class="grid gap-8 desktop:grid-cols-2 desktop:gap-12">
+      <div class="card" data-aos="fade-up" data-aos-duration="800">
+        <h3 class="mb-6 text-lg font-semibold text-ink dark:text-white">Front-end</h3>
+        <div v-for="(skill, index) in frontEndSkills" :key="skill.name" class="mb-5 last:mb-0">
+          <div class="mb-2 flex justify-between text-sm">
+            <span class="font-medium text-ink dark:text-slate-200">{{ skill.name }}</span>
+            <span class="text-ink-muted dark:text-slate-400">{{ skill.percentage }}%</span>
           </div>
-          <div class="section item w-[100%] bg-gray rounded-full">
+          <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
             <div
-              class="line h-3 rounded-full bg-oranged"
+              class="skill-bar h-full rounded-full bg-blue transition-all duration-1000 ease-out"
+              :data-skill-bar="true"
+              :data-width="skill.percentage"
               :style="{ width: skill.percentage + '%' }"
-              :ref="'progressBar' + index"
             ></div>
           </div>
         </div>
       </div>
 
-      <!-- Back-end Skills -->
-      <div class="right desktop:w-[50%]">
-        <h3 class="font-bold mb-4 text-[20px]" data-aos="fade-up" data-aos-duration="2500">
-          Back-end
-        </h3>
-        <div
-          v-for="(skill, index) in backEndSkills"
-          :key="index"
-          class="skills mb-5"
-          data-aos="fade-up"
-          :data-aos-delay="index * 100"
-        >
-          <div class="flex justify-between mb-2">
-            <p>{{ skill.name }}</p>
-            <p>{{ skill.percentage }}%</p>
+      <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <h3 class="mb-6 text-lg font-semibold text-ink dark:text-white">Back-end</h3>
+        <div v-for="skill in backEndSkills" :key="skill.name" class="mb-5 last:mb-0">
+          <div class="mb-2 flex justify-between text-sm">
+            <span class="font-medium text-ink dark:text-slate-200">{{ skill.name }}</span>
+            <span class="text-ink-muted dark:text-slate-400">{{ skill.percentage }}%</span>
           </div>
-          <div class="section item w-[100%] bg-gray rounded-full">
+          <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
             <div
-              class="line h-3 rounded-full bg-oranged"
+              class="skill-bar h-full rounded-full bg-blue transition-all duration-1000 ease-out"
+              :data-skill-bar="true"
+              :data-width="skill.percentage"
               :style="{ width: skill.percentage + '%' }"
-              :ref="'progressBar' + (index + frontEndSkills.length)"
             ></div>
           </div>
         </div>
@@ -123,56 +87,3 @@ export default {
     </div>
   </main>
 </template>
-
-<style lang="postcss" scoped>
-.skills {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.skills:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.section {
-  background-color: #e0e0e0;
-  border-radius: 9999px;
-  overflow: hidden;
-}
-
-.line {
-  transition: width 1.5s ease-in-out;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-}
-
-.item {
-  position: relative;
-}
-
-.item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.item:hover::after {
-  opacity: 1;
-}
-
-@keyframes progress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-</style>

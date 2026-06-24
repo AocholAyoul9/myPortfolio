@@ -44,10 +44,10 @@ const techStack = [
         </button>
 
         <div class="flex flex-wrap gap-3">
-          <a href="https://github.com/shawilayoul" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://github.com/aocholayoul9" target="_blank" rel="noopener noreferrer" class="social-link">
             <i class="pi pi-github text-lg"></i>
           </a>
-          <a href="https://www.linkedin.com/in/aochol-ayoul-mojowok-654a7121a" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://www.linkedin.com/in/aochol-ayoul" target="_blank" rel="noopener noreferrer" class="social-link">
             <i class="pi pi-linkedin text-lg"></i>
           </a>
         </div>

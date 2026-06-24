@@ -48,7 +48,7 @@ export default {
       </p>
     </div>
 
-    <div class="grid gap-8 desktop:grid-cols-2 desktop:gap-12">
+    <div class="grid min-w-0 gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
       <div class="card" data-aos="fade-up" data-aos-duration="800">
         <h3 class="mb-6 text-lg font-semibold text-ink dark:text-white">Front-end</h3>
         <div v-for="(skill, index) in frontEndSkills" :key="skill.name" class="mb-5 last:mb-0">

@@ -33,11 +33,11 @@ const store = useDataStore()
             class="absolute left-4 top-6 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-blue bg-white dark:bg-surface-dark desktop:left-1/2"
           ></div>
 
-          <div class="card ml-10 w-full desktop:ml-0 desktop:max-w-md">
+          <div class="card ml-8 min-w-0 w-[calc(100%-2rem)] sm:ml-10 sm:w-full desktop:ml-0 desktop:max-w-md">
             <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-blue">
               {{ item.duration }}
             </p>
-            <h4 class="mb-1 font-semibold text-ink dark:text-white">{{ item.title }}</h4>
+            <h4 class="mb-1 break-words font-semibold text-ink dark:text-white">{{ item.title }}</h4>
             <p class="mb-3 text-sm font-medium text-ink-muted dark:text-slate-300">{{ item.company }}</p>
             <div v-if="item.stack" class="mb-3 flex flex-wrap gap-2">
               <span v-for="tech in item.stack" :key="tech" class="tag">{{ tech }}</span>
@@ -68,11 +68,11 @@ const store = useDataStore()
             class="absolute left-4 top-6 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-slate-400 bg-white dark:border-slate-500 dark:bg-surface-dark desktop:left-1/2"
           ></div>
 
-          <div class="card ml-10 w-full desktop:ml-0 desktop:max-w-md">
+          <div class="card ml-8 min-w-0 w-[calc(100%-2rem)] sm:ml-10 sm:w-full desktop:ml-0 desktop:max-w-md">
             <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-blue">
               {{ item.duration }}
             </p>
-            <h4 class="mb-1 font-semibold text-ink dark:text-white">{{ item.title }}</h4>
+            <h4 class="mb-1 break-words font-semibold text-ink dark:text-white">{{ item.title }}</h4>
             <p class="mb-3 text-sm font-medium text-ink-muted dark:text-slate-300">{{ item.company }}</p>
             <div v-if="item.stack" class="mb-3 flex flex-wrap gap-2">
               <span v-for="tech in item.stack" :key="tech" class="tag">{{ tech }}</span>

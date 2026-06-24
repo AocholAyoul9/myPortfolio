@@ -10,14 +10,15 @@
       </p>
     </div>
 
-    <div class="grid gap-8 mobile:grid-cols-1 desktop:grid-cols-2 tablate:grid-cols-2">
+    <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
       <!-- Project 1 -->
       <article class="card flex flex-col gap-4" data-aos="fade-up" data-aos-duration="800">
         <div class="project-links">
           <a href="https://github.com/shawilayoul/sleekStyles" target="_blank" rel="noopener noreferrer">Code</a>
           <a href="https://sleekstyle.onrender.com" target="_blank" rel="noopener noreferrer">Live demo</a>
         </div>
-        <div class="laptop">
+        <div class="overflow-hidden">
+          <div class="laptop">
           <div class="laptop__screen">
             <video width="100%" height="100%" controls>
               <source src="../assets/videos/projects2.mp4" type="video/mp4" />
@@ -25,6 +26,7 @@
           </div>
           <div class="laptop__bottom"><div class="laptop__under"></div></div>
           <div class="laptop__shadow"></div>
+          </div>
         </div>
         <div class="project-tags">
           <span class="tag">React</span>
@@ -40,7 +42,8 @@
           <a href="https://github.com/shawilayoul/silvercake" target="_blank" rel="noopener noreferrer">Code</a>
           <a href="https://sleekstyle.onrender.com/" target="_blank" rel="noopener noreferrer">Dashboard</a>
         </div>
-        <div class="laptop">
+        <div class="overflow-hidden">
+          <div class="laptop">
           <div class="laptop__screen">
             <video width="100%" height="100%" controls>
               <source src="../assets/videos/projects1.mp4" type="video/mp4" />
@@ -48,6 +51,7 @@
           </div>
           <div class="laptop__bottom"><div class="laptop__under"></div></div>
           <div class="laptop__shadow"></div>
+          </div>
         </div>
         <div class="project-tags">
           <span class="tag">React</span>
@@ -63,7 +67,8 @@
           <a href="https://github.com/shawilayoul/VibePlay-Music-App" target="_blank" rel="noopener noreferrer">Code</a>
           <a href="https://play.google.com/store/apps/details?id=com.fjuchristianvibes" target="_blank" rel="noopener noreferrer">Play Store</a>
         </div>
-        <div class="laptop">
+        <div class="overflow-hidden">
+          <div class="laptop">
           <div class="laptop__screen">
             <video width="100%" height="100%" controls>
               <source src="../assets/videos/projects3.mp4" type="video/mp4" />
@@ -71,6 +76,7 @@
           </div>
           <div class="laptop__bottom"><div class="laptop__under"></div></div>
           <div class="laptop__shadow"></div>
+          </div>
         </div>
         <div class="project-tags">
           <span class="tag">React Native</span>
@@ -85,7 +91,8 @@
           <a href="#" class="opacity-50 pointer-events-none">Code</a>
           <a href="https://musicappdashboard.onrender.com" target="_blank" rel="noopener noreferrer">Dashboard</a>
         </div>
-        <div class="laptop">
+        <div class="overflow-hidden">
+          <div class="laptop">
           <div class="laptop__screen">
             <video width="100%" height="100%" controls>
               <source src="../assets/videos/project4.mp4" type="video/mp4" />
@@ -93,6 +100,7 @@
           </div>
           <div class="laptop__bottom"><div class="laptop__under"></div></div>
           <div class="laptop__shadow"></div>
+          </div>
         </div>
         <div class="project-tags">
           <span class="tag">React</span>
@@ -108,7 +116,8 @@
           <a href="https://github.com/shawilayoul/CakeArts" target="_blank" rel="noopener noreferrer">Code</a>
           <a href="https://cakeart.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
         </div>
-        <div class="laptop">
+        <div class="overflow-hidden">
+          <div class="laptop">
           <div class="laptop__screen">
             <video width="100%" height="100%" controls>
               <source src="../assets/videos/project5.mp4" type="video/mp4" />
@@ -116,6 +125,7 @@
           </div>
           <div class="laptop__bottom"><div class="laptop__under"></div></div>
           <div class="laptop__shadow"></div>
+          </div>
         </div>
         <div class="project-tags">
           <span class="tag">React</span>
@@ -144,7 +154,14 @@
 .laptop {
   position: relative;
   margin: 0 auto;
-  max-width: 20rem;
+  width: 100%;
+  max-width: 18rem;
+}
+
+@media (min-width: 480px) {
+  .laptop {
+    max-width: 20rem;
+  }
 }
 
 .laptop__screen {
@@ -170,7 +187,7 @@
 .laptop__bottom {
   position: relative;
   z-index: 1;
-  margin: 0 -7%;
+  margin: 0 -4%;
   height: 0.6rem;
   background: #e2e8f0;
   background-image: linear-gradient(
@@ -224,11 +241,11 @@
 
 .laptop__shadow {
   position: absolute;
-  right: -10%;
-  bottom: -2rem;
-  left: -10%;
+  right: 0;
+  bottom: -1.5rem;
+  left: 0;
   z-index: 0;
   height: 1.5rem;
-  background: radial-gradient(ellipse closest-side, rgba(15, 23, 42, 0.15), transparent);
+  background: radial-gradient(ellipse closest-side, rgba(15, 23, 42, 0.12), transparent);
 }
 </style>

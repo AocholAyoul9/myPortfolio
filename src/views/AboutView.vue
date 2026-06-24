@@ -26,8 +26,8 @@ const techStack = [
 
 <template>
   <main class="section-wrap" data-aos="fade-up" data-aos-duration="800">
-    <div class="grid items-center gap-12 desktop:grid-cols-2 desktop:gap-16">
-      <div class="flex flex-col gap-6">
+    <div class="grid min-w-0 items-center gap-8 sm:gap-12 desktop:grid-cols-2 desktop:gap-16">
+      <div class="flex min-w-0 flex-col gap-6">
         <div>
           <p class="section-label">À propos</p>
           <h2 class="section-title">À propos de moi</h2>
@@ -56,17 +56,17 @@ const techStack = [
         <a
           :href="cvPdf"
           download="Aochol-Mojowok-CV.pdf"
-          class="btn-primary w-fit"
+          class="btn-primary w-full sm:w-fit"
         >
           Télécharger mon CV
         </a>
       </div>
 
-      <div class="card desktop:block" data-aos="fade-left" data-aos-duration="800">
+      <div class="card min-w-0" data-aos="fade-left" data-aos-duration="800">
         <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-ink-muted dark:text-slate-400">
           Stack technique
         </p>
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           <div
             v-for="tech in techStack"
             :key="tech.alt"

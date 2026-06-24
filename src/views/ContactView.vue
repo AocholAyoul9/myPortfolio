@@ -48,7 +48,7 @@ const sendEmail = () => {
           </div>
           <div>
             <p class="text-sm font-semibold text-ink dark:text-white">Email</p>
-            <a href="mailto:aocholayoul9@gmail.com" class="text-sm text-ink-muted hover:text-blue dark:text-slate-400">
+            <a href="mailto:aocholayoul9@gmail.com" class="break-all text-sm text-ink-muted hover:text-blue dark:text-slate-400">
               aocholayoul9@gmail.com
             </a>
           </div>

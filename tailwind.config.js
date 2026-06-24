@@ -3,12 +3,13 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    screens: {
-      mobile: '100px',
-      tablate: '600px',
-      desktop: '1000px'
-    },
     extend: {
+      screens: {
+        xs: '480px',
+        mobile: '100px',
+        tablate: '600px',
+        desktop: '1000px'
+      },
       colors: {
         blue: '#2563eb',
         oranged: '#ea580f',

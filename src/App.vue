@@ -34,7 +34,7 @@ const toggleDarkMode = () => {
 
 <template>
   <div :class="{ dark: isDarkMode }">
-    <div class="min-h-screen bg-surface-muted text-ink transition-colors duration-300 dark:bg-surface-dark-muted dark:text-slate-100">
+    <div class="min-h-screen overflow-x-hidden bg-surface-muted text-ink transition-colors duration-300 dark:bg-surface-dark-muted dark:text-slate-100">
       <Header :toggleDarkMode="toggleDarkMode" :isDarkMode="isDarkMode" />
 
       <div id="home"><HomeView /></div>

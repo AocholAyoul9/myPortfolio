@@ -28,10 +28,10 @@
         </div>
 
         <div class="flex gap-3">
-          <a href="https://github.com/shawilayoul" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <a href="https://github.com/aocholayoul9" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
             <i class="pi pi-github text-lg"></i>
           </a>
-          <a href="https://www.linkedin.com/in/aochol-ayoul-mojowok-654a7121a" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/aochol-ayoul" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
             <i class="pi pi-linkedin text-lg"></i>
           </a>
         </div>

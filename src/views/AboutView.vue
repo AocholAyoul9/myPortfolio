@@ -1,5 +1,6 @@
 <script setup>
 import { image } from '@/assets/images'
+import cvPdf from '@/assets/aochol-mojowok-cv.pdf'
 import { useDataStore } from '@/stores/data'
 import { ref, computed } from 'vue'
 
@@ -52,7 +53,11 @@ const techStack = [
           </a>
         </div>
 
-        <a href="https://shawiltech.fr/" target="_blank" rel="noopener noreferrer" class="btn-primary w-fit">
+        <a
+          :href="cvPdf"
+          download="Aochol-Mojowok-CV.pdf"
+          class="btn-primary w-fit"
+        >
           Télécharger mon CV
         </a>
       </div>
